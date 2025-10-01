@@ -14,7 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation";
 
 // Zod validation schema
-const signUpSchema = z.object({
+const signInSchema = z.object({
     email: z.string()
         .email("Invalid email address"),
     password: z.string()
@@ -41,7 +41,7 @@ export default function SignIn() {
         setValue,
         watch
     } = useForm({
-        resolver: zodResolver(signUpSchema),
+        resolver: zodResolver(signInSchema),
         mode: "onChange", // Add this for immediate validation
         defaultValues: {
             firstName: "",
@@ -68,16 +68,14 @@ export default function SignIn() {
         }
     };
 
-
     return (
         <div className="w-full h-screen pl-4 lg:pl-40 pr-4 lg:pr-40 py-3 lg:py-10 bg-[#FFFFFF]">
-            <div className="flex justify-start">
-                <Image src="/sign-up-images/Logo.svg" alt="logo" height={50} width={100} />
-            </div>
-
             <div className="lg:flex gap-20">
                 <div className="w-full lg:w-1/2 max-w-3xl p-4 lg:p-10 mt-20">
-                    <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="flex justify-start">
+                        <Image src="/sign-up-images/Logo.svg" alt="logo" height={50} width={100} />
+                    </div>
+                    <form className="w-full mt-16" onSubmit={handleSubmit(onSubmit)}>
                         <h1 className="text-[#313131] font-poppins font-semibold text-4xl">Log in</h1>
                         <p className="text-[#313131] font-poppins mt-5">Login to access your travelwise  account</p>
 
@@ -154,6 +152,7 @@ export default function SignIn() {
                         </div>
                     </form>
                 </div>
+
                 <div className="hidden lg:block lg:w-1/2 h-[816px] relative">
                     <Image src="/sign-in-images/sign-in-image.png" alt="sign-in-image" fill className="rounded-3xl object-cover" />
                 </div>
