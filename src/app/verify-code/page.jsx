@@ -5,30 +5,20 @@ import { useId } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
-import { z } from "zod"
 import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation";
 
-// Zod validation schema
-const forgotPasswordSchema = z.object({
-    email: z.string()
-        .email("Invalid email address"),
-});
-
 export default function ForgotPassword() {
-    const emailId = useId();
+    const verifyCodeId = useId();
     const router = useRouter();
 
     const {
         register,
         handleSubmit,
-        formState: { errors, isSubmitting }
+        formState: { isSubmitting }
     } = useForm({
-        resolver: zodResolver(forgotPasswordSchema),
-        mode: "onChange", // Add this for immediate validation
         defaultValues: {
-            email: "",
+            verifyCode: "",
         }
     });
 
@@ -52,45 +42,32 @@ export default function ForgotPassword() {
                         <Image src="/sign-up-images/Logo.svg" alt="logo" height={50} width={100} />
                     </div>
                     <form className="w-full mt-24" onSubmit={handleSubmit(onSubmit)}>
-                        <Link href="/" className="flex items-center gap-1">
+                        <Link href="/sign-in" className="flex items-center gap-1">
                             <MdOutlineArrowBackIos />
                             <p className="font-poppins text-[#313131]">Back to login</p>
                         </Link>
-                        <h1 className="text-[#313131] font-poppins font-semibold text-4xl mt-4">Forgot your password?</h1>
-                        <p className="text-[#313131] font-poppins mt-5">Don’t worry, happens to all of us. Enter your email below
-                            to recover your password</p>
+                        <h1 className="text-[#313131] font-poppins font-semibold text-4xl mt-4">Verify code</h1>
+                        <p className="text-[#313131] font-poppins mt-5">An authentication code has been sent to your email.</p>
 
                         <div className="group relative mt-8 w-full">
                             <label
-                                htmlFor={emailId}
+                                htmlFor={verifyCodeId}
                                 className="bg-background absolute start-1 top-0 z-10 font-poppins text-[#1C1B1F] block -translate-y-1/2 px-2 text-xs font-normal group-has-disabled:opacity-50"
                             >
-                                Email
+                                Enter Code
                             </label>
-                            <Input id={emailId} className="h-10 text-[#1C1B1F] font-poppins" placeholder="john.doe@gmail.com"
-                                type="email" {...register("email")} />
-                            {errors.email && (
-                                <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
-                            )}
+                            <Input id={verifyCodeId} className="h-10 text-[#1C1B1F] font-poppins" placeholder="7789BM6X"
+                                type="text" {...register("verifyCode")} />
                         </div>
+
+                        <p className="mt-8 font-poppins">Didn’t receive a code?{" "}<Link href=""
+                            className="text-[#FF8682]">Resend</Link></p>
 
                         <div className="w-full mt-8">
                             <Button type="submit" className="w-full h-10 text-[#F3F3F3] bg-linear-to-r from-[#088347]
                             to-[#C6E824] cursor-pointer font-poppins" disabled={isSubmitting}>
-                                {isSubmitting ? "Submitting..." : "Submit"}
+                                {isSubmitting ? "Verifying..." : "Verify"}
                             </Button>
-                        </div>
-
-                        <div className="w-full flex gap-3 mt-12">
-                            <div className="w-full max-w-[400px] h-[1px] bg-[gray]" />
-                            <p className="text-[gray] font-poppins -translate-y-1/2 text-sm">Or</p>
-                            <div className="w-full max-w-[400px] h-[1px] bg-[gray]" />
-                        </div>
-
-                        <div className="w-full h-[50px] border border-[#515DEF] rounded-md flex items-center justify-center
-                        gap-4 cursor-pointer mt-12">
-                            <Image src={"/sign-up-images/Google_Icon.svg"} alt="google-logo" width={20} height={20} />
-                            <p className="font-poppins text-[#313131]">Log In With Google</p>
                         </div>
                     </form>
                 </div>

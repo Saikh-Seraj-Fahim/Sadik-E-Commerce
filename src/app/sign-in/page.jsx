@@ -133,7 +133,9 @@ export default function SignIn() {
 
                         <div className="w-full mt-8">
                             <Button type="submit" className="w-full h-10 text-[#F3F3F3] bg-linear-to-r from-[#088347]
-                            to-[#C6E824] cursor-pointer font-poppins">Log In</Button>
+                            to-[#C6E824] cursor-pointer font-poppins" disabled={isSubmitting}>
+                                {isSubmitting ? "Logging In..." : "Log In"}
+                            </Button>
                         </div>
 
                         <p className="mt-8 text-center font-poppins">Don’t have an account?{" "}<Link href="/sign-up"

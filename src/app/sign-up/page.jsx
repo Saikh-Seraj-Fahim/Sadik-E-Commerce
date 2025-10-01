@@ -229,7 +229,9 @@ export default function SignUp() {
 
                         <div className="w-full mt-8">
                             <Button type="submit" className="w-full h-10 text-[#F3F3F3] bg-linear-to-r from-[#088347]
-                            to-[#C6E824] cursor-pointer font-poppins">Create Account</Button>
+                            to-[#C6E824] cursor-pointer font-poppins" disabled={isSubmitting}>
+                                {isSubmitting ? "Creating Account..." : "Create Account"}
+                            </Button>
                         </div>
 
                         <p className="mt-8 text-center font-poppins">Already have an account?{"  "}<Link href="/sign-in"
