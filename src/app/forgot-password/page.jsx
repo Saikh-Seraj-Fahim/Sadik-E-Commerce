@@ -47,11 +47,11 @@ export default function ForgotPassword() {
     return (
         <div className="w-full h-screen pl-4 lg:pl-40 pr-4 lg:pr-40 py-3 lg:py-10 bg-[#FFFFFF]">
             <div className="lg:flex gap-20">
-                <div className="w-full lg:w-1/2 max-w-3xl p-4 lg:p-10 mt-20">
+                <div className="w-full lg:w-1/2 max-w-3xl">
                     <div className="flex justify-start">
                         <Image src="/sign-up-images/Logo.svg" alt="logo" height={50} width={100} />
                     </div>
-                    <form className="w-full mt-16" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="w-full mt-24" onSubmit={handleSubmit(onSubmit)}>
                         <Link href="/" className="flex items-center gap-1">
                             <MdOutlineArrowBackIos />
                             <p className="font-poppins text-[#313131]">Back to login</p>

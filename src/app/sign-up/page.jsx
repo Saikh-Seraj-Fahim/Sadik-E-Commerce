@@ -91,9 +91,9 @@ export default function SignUp() {
                     <Image src="/sign-up-images/sign-up-image.png" alt="sign-up-image" fill className="rounded-3xl object-cover" />
                 </div>
 
-                <div className="w-full lg:w-2/3 max-w-5xl p-4 lg:p-10">
+                <div className="w-full lg:w-2/3 max-w-5xl">
                     <div className="flex justify-end">
-                        <Image src="/sign-up-images/Logo.svg" alt="logo" height={50} width={100} />
+                        <Image src="/sign-up-images/Logo.svg" alt="logo" height={100} width={100} />
                     </div>
                     <form className="w-full mt-16" onSubmit={handleSubmit(onSubmit)}>
                         <h1 className="text-[#313131] font-poppins font-semibold text-4xl">Sign up</h1>
