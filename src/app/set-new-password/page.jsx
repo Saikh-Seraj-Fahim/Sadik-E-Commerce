@@ -69,7 +69,7 @@ export default function ForgotPassword() {
                         <p className="text-[#313131] font-poppins mt-5">Your previous password has been reseted. Please set a
                             new password for your account.</p>
 
-                        <div className="group relative mt-8 w-full">
+                        <div className="group relative mt-12 w-full">
                             <label
                                 htmlFor={createPasswordId}
                                 className="bg-background absolute start-1 top-0 z-10 font-poppins text-[#1C1B1F] block -translate-y-1/2 px-2 text-xs font-normal group-has-disabled:opacity-50"
@@ -93,7 +93,7 @@ export default function ForgotPassword() {
                             )}
                         </div>
 
-                        <div className="group relative mt-8 w-full">
+                        <div className="group relative mt-11 w-full">
                             <label
                                 htmlFor={reEnterPasswordId}
                                 className="bg-background absolute start-1 top-0 z-10 font-poppins text-[#1C1B1F] block -translate-y-1/2 px-2 text-xs font-normal group-has-disabled:opacity-50"
@@ -117,7 +117,7 @@ export default function ForgotPassword() {
                             )}
                         </div>
 
-                        <div className="w-full mt-8">
+                        <div className="w-full mt-11">
                             <Button type="submit" className="w-full h-10 text-[#F3F3F3] bg-linear-to-r from-[#088347]
                             to-[#C6E824] cursor-pointer font-poppins" disabled={isSubmitting}>
                                 {isSubmitting ? "Setting Password..." : "Set Password"}
