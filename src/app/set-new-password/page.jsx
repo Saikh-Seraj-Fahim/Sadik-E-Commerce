@@ -58,13 +58,13 @@ export default function ForgotPassword() {
 
 
     return (
-        <div className="w-full h-screen pl-4 lg:pl-40 pr-4 lg:pr-40 py-3 lg:py-10 bg-[#FFFFFF]">
+        <div className="w-full h-screen bg-[#FFFFFF]">
             <div className="lg:flex gap-20">
-                <div className="w-full lg:w-1/2 max-w-3xl">
-                    <div className="flex justify-start">
+                <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
+                    <div className="w-full max-w-[512px]">
                         <Image src="/sign-up-images/Logo.svg" alt="logo" height={50} width={100} />
                     </div>
-                    <form className="w-full mt-24" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="w-full max-w-[512px] mt-24" onSubmit={handleSubmit(onSubmit)}>
                         <h1 className="text-[#313131] font-poppins font-semibold text-4xl mt-4">Set a password</h1>
                         <p className="text-[#313131] font-poppins mt-5">Your previous password has been reseted. Please set a
                             new password for your account.</p>

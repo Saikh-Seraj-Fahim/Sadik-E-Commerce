@@ -85,17 +85,17 @@ export default function SignUp() {
     };
 
     return (
-        <div className="w-full h-screen pl-4 lg:pl-40 pr-4 lg:pr-40 py-3 lg:py-10 bg-[#FFFFFF]">
-            <div className="lg:flex gap-20">
-                <div className="hidden lg:block lg:w-1/3 h-[816px] relative">
+        <div className="w-full h-screen bg-[#FFFFFF]">
+            <div className="lg:flex gap-2">
+                <div className="hidden lg:w-1/3 h-[816px] lg:flex flex-col items-center justify-center relative">
                     <Image src="/sign-up-images/sign-up-image.png" alt="sign-up-image" fill className="rounded-3xl object-cover" />
                 </div>
 
-                <div className="w-full lg:w-2/3 max-w-5xl">
-                    <div className="flex justify-end">
+                <div className="w-full lg:w-2/3 flex flex-col items-center justify-center">
+                    <div className="w-full max-w-[512px] flex justify-end">
                         <Image src="/sign-up-images/Logo.svg" alt="logo" height={100} width={100} />
                     </div>
-                    <form className="w-full mt-16" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="w-full max-w-[512px] mt-16" onSubmit={handleSubmit(onSubmit)}>
                         <h1 className="text-[#313131] font-poppins font-semibold text-4xl">Sign up</h1>
                         <p className="text-[#313131] font-poppins mt-5">Let’s get you all set up so you can access your personal
                             account.</p>
@@ -237,13 +237,13 @@ export default function SignUp() {
                         <p className="mt-8 text-center font-poppins">Already have an account?{"  "}<Link href="/sign-in"
                             className="text-[#FF8682]">Log In</Link></p>
 
-                        <div className="w-full flex gap-3 mt-12">
-                            <div className="w-full max-w-[400px] h-[1px] bg-[gray]" />
-                            <p className="text-[gray] font-poppins -translate-y-1/2 text-sm">Or Sign up with</p>
-                            <div className="w-full max-w-[400px] h-[1px] bg-[gray]" />
+                        <div className="w-full flex gap-1 mt-12">
+                            <div className="w-full max-w-[250px] h-[1px] bg-[gray]" />
+                            <p className="text-[gray] font-poppins -translate-y-1/2 text-sm">Or</p>
+                            <div className="w-full max-w-[250px] h-[1px] bg-[gray]" />
                         </div>
 
-                        <div className="w-full flex gap-4 mt-12">
+                        <div className="w-full flex gap-4 mt-6">
                             <div className="w-full h-[50px] border border-[#515DEF] rounded-md flex items-center justify-center
                             cursor-pointer">
                                 <Image src={"/sign-up-images/facebook-logo.svg"} alt="fb-logo" width={30} height={30} />

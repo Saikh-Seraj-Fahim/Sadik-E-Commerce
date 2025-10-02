@@ -35,13 +35,13 @@ export default function ForgotPassword() {
     };
 
     return (
-        <div className="w-full h-screen pl-4 lg:pl-40 pr-4 lg:pr-40 py-3 lg:py-10 bg-[#FFFFFF]">
+        <div className="w-full h-screen bg-[#FFFFFF]">
             <div className="lg:flex gap-20">
-                <div className="w-full lg:w-1/2 max-w-3xl">
-                    <div className="flex justify-start">
+                <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
+                    <div className="w-full max-w-[512px]">
                         <Image src="/sign-up-images/Logo.svg" alt="logo" height={50} width={100} />
                     </div>
-                    <form className="w-full mt-24" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="w-full max-w-[512px] mt-24" onSubmit={handleSubmit(onSubmit)}>
                         <Link href="/sign-in" className="flex items-center gap-1">
                             <MdOutlineArrowBackIos />
                             <p className="font-poppins text-[#313131]">Back to login</p>
@@ -49,7 +49,7 @@ export default function ForgotPassword() {
                         <h1 className="text-[#313131] font-poppins font-semibold text-4xl mt-4">Verify code</h1>
                         <p className="text-[#313131] font-poppins mt-5">An authentication code has been sent to your email.</p>
 
-                        <div className="group relative mt-8 w-full">
+                        <div className="group relative mt-12 w-full">
                             <label
                                 htmlFor={verifyCodeId}
                                 className="bg-background absolute start-1 top-0 z-10 font-poppins text-[#1C1B1F] block -translate-y-1/2 px-2 text-xs font-normal group-has-disabled:opacity-50"
