@@ -1,10 +1,38 @@
 import { Poppins } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
+import { Inter } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
 const poppinsFont = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-poppins"
+});
+
+const garamondFont = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-garamond"
+});
+
+const interFont = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter"
+});
+
+const playfairDisplayFont = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-playFairDisplay"
+});
+
+const openSansFont = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-openSans"
 });
 
 export const metadata = {
@@ -16,7 +44,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppinsFont.variable} antialiased`}
+        className={`${poppinsFont.variable} ${garamondFont.variable} ${interFont.variable} 
+        ${playfairDisplayFont.variable} ${openSansFont.variable} antialiased`}
       >
         {children}
       </body>

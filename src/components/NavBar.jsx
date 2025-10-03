@@ -1,25 +1,26 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { Menu, X, Search } from "lucide-react";
+import { FaCircleUser } from "react-icons/fa6";
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const navLinks = [{
         href: "#",
         text: "Home"
     }, {
         href: "#",
-        text: "Articles"
+        text: "Products"
     }, {
         href: "#",
-        text: "Tutorials"
-    }, {
-        href: "#",
-        text: "Reviews"
+        text: "Categories"
     }, {
         href: "#",
         text: "About"
+    }, {
+        href: "#",
+        text: "Contact Us"
     }];
 
     useEffect(() => {
@@ -32,9 +33,9 @@ export default function NavBar() {
             document.body.style.overflow = "auto";
         };
     }, [isMenuOpen]);
-    
+
     return <>
-        <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 rounded-full">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     { }
@@ -61,8 +62,8 @@ export default function NavBar() {
                         <button className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                             <Search className="h-5 w-5" />
                         </button>
-                        <a href="#" className="px-4 py-2 text-sm font-medium bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors shadow-sm">
-                            Subscribe
+                        <a href="#" className="rounded-lg shadow-sm">
+                            <FaCircleUser className="h-5 w-5" />
                         </a>
                     </div>
 
