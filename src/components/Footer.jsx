@@ -32,10 +32,10 @@ export default function Footer() {
     return (
         <footer className="bg-gradient-to-r from-[#088347]/30 to-[#C6E824]/30 dark:from-gray-900 dark:to-black text-gray-900
      dark:text-white py-12 px-4">
-            <div className="w-full">
-                <Image src="/sign-up-images/Logo.svg" alt="logo" height={100} width={100} />
-            </div>
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mt-10">
+                <div className="lg:col-span-5">
+                    <Image src="/sign-up-images/Logo.svg" alt="logo" height={100} width={100} />
+                </div>
                 <div className="flex flex-col space-x-5 pt-2">
                     <div className="flex space-x-5">
                         <a href="#" className="text-[#07484A] hover:text-blue-600 dark:text-gray-400 dark:hover:text-teal-400 
