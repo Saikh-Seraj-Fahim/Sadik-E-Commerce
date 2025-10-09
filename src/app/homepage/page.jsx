@@ -167,31 +167,3 @@ export default function HomePage() {
 
 
 
-{/* <div className="w-full pt-12 pl-44 pb-16">
-    <Swiper
-        modules={[Navigation, Pagination, Scrollbar]}
-        spaceBetween={40}
-        slidesPerView={3}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}>
-        {data.map(d => (
-            <SwiperSlide key={d.name}>
-                <div className="w-[442px] h-[186px] bg-gradient-to-r 
-                        from-[#181F23] to-[#21323A] rounded-lg">
-                    <p className="text-white">{d.description}</p>
-                    <div className="flex gap-4 pt-6">
-                        <Image src={d.img} alt="logo" width={40} height={40}
-                            className="rounded-full" />
-                        <div className="flex flex-col pt-3">
-                            <p className="text-[#8E7D3F]">{d.name}</p>
-                            <p className="text-[#8E7D3F]">{d.title}</p>
-                        </div>
-                        <div className="w-[150px] h-[20px] bg-[#8E7D3F] mt-6 rounded-full"></div>
-                    </div>
-                </div>
-            </SwiperSlide>
-        ))
-        }
-    </Swiper>
-</div> */}
