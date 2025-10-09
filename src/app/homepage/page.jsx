@@ -2,7 +2,7 @@
 import NavBar from "@/components/NavBar";
 // import { Button as ShadcnButton } from "@/components/ui/button"
 import Link from "next/link";
-
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 // import { HiOutlineArrowRight } from "react-icons/hi2";
 // import { Button as ChakraButton, Card, Image, Text, ChakraProvider } from "@chakra-ui/react"
 
@@ -29,6 +29,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Image from "next/image";
 
 const bestSellers = [
     { id: 1, imageName: "socket-image", title: "Armchair", description: "Light single chair", price: "$145" },
@@ -36,6 +37,11 @@ const bestSellers = [
     { id: 3, imageName: "ameter", title: "Minimal Sofa", description: "Modern design", price: "$345" },
     { id: 4, imageName: "wire", title: "Dining Chair", description: "Elegant chair", price: "$125" },
     { id: 5, imageName: "socket-image", title: "Office Chair", description: "Ergonomic design", price: "$199" },
+    { id: 6, imageName: "socket-image", title: "Armchair", description: "Light single chair", price: "$145" },
+    { id: 7, imageName: "mcb", title: "Premium Sofa", description: "Comfortable seating", price: "$245" },
+    { id: 8, imageName: "ameter", title: "Minimal Sofa", description: "Modern design", price: "$345" },
+    { id: 9, imageName: "wire", title: "Dining Chair", description: "Elegant chair", price: "$125" },
+    { id: 10, imageName: "socket-image", title: "Office Chair", description: "Ergonomic design", price: "$199" },
 ];
 
 export default function HomePage() {
@@ -98,42 +104,41 @@ export default function HomePage() {
                 </SidebarProvider>
             </div> */}
 
+
+            {/* Carousel */}
             <div className="mt-18">
                 <h1 className="text-center text-[#07484A] text-5xl font-playFairDisplay font-semibold">Best Sellers</h1>
-                {/* <ChakraProvider>
-                    <Card.Root maxW="sm" overflow="hidden">
-                        <Image
-                            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                            alt="Green double couch with wooden legs"
-                        />
-                        <Card.Body gap="2">
-                            <Card.Title>Living room Sofa</Card.Title>
-                            <Card.Description>
-                                This sofa is perfect for modern tropical spaces, baroque inspired
-                                spaces.
-                            </Card.Description>
-                            <Text textStyle="2xl" fontWeight="medium" letterSpacing="tight" mt="2">
-                                $450
-                            </Text>
-                        </Card.Body>
-                        <Card.Footer gap="2">
-                            <ChakraButton variant="solid">Buy now</ChakraButton>
-                            <ChakraButton variant="ghost">Add to cart</ChakraButton>
-                        </Card.Footer>
-                    </Card.Root>
-                </ChakraProvider> */}
-
-
-                <div className="w-full mt-12 pl-36 pr-36 pb-16">
+                <div className="w-full mt-12 px-8 md:px-16 lg:px-24">
+                    {/* <Image src="/best-sellers-images/wire.png" alt="wire" width={250} height={100}/> */}
                     <Swiper
                         modules={[Navigation, Scrollbar]}
                         spaceBetween={10}
-                        slidesPerView={4}
-                        navigation
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            1280: {
+                                slidesPerView: 3,
+                            },
+                            1536: {
+                                slidesPerView: 4,
+                            },
+                            1920: {
+                                slidesPerView: 5,
+                            },
+                        }}
+                        navigation={{
+                            prevEl: '.custom-prev',
+                            nextEl: '.custom-next',
+                        }}
                         //pagination={{ clickable: true }}
-                        scrollbar={{ draggable: true }}>
+                        scrollbar={{ draggable: true }}
+                        className="bg-[url(/best-sellers-images/wire.png)]">
                         {bestSellers.map((item) => (
-                            <SwiperSlide key={item.id} className="pb-9">
+                            <SwiperSlide key={item.id} className="pb-9 !flex !items-center !justify-center">
                                 <BestSellersCard
                                     imageName={item.imageName}
                                     title={item.title}
@@ -143,6 +148,16 @@ export default function HomePage() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    <div className="flex justify-end items-center gap-6 mt-6">
+                        <button className="custom-prev w-10 h-10 rounded-full flex items-center justify-center bg-[#E0EFF6] 
+                        transition cursor-pointer">
+                            <FaArrowLeft className="text-[#07484A]" />
+                        </button>
+                        <button className="custom-next w-10 h-10 rounded-full flex items-center justify-center bg-[#F9D9DA] 
+                        transition cursor-pointer">
+                            <FaArrowRight className="text-[#07484A]" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
