@@ -1,6 +1,6 @@
 "use client"
 import NavBar from "@/components/NavBar";
-// import { Button as ShadcnButton } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 // import { HiOutlineArrowRight } from "react-icons/hi2";
@@ -59,10 +59,10 @@ export default function HomePage() {
                     <p className="font-normal font-openSans text-2xl text-[#FFFFFF] mt-6">Explore different categories. Find the
                         best deals.</p>
                     <div className="mt-8">
-                        {/* <ShadcnButton type="button" className="h-10 text-[#FDFBF8] text-xl bg-linear-to-r from-[#088347]
+                        <Button type="button" className="h-10 text-[#FDFBF8] text-xl bg-linear-to-r from-[#088347]
                             to-[#C6E824] cursor-pointer font-openSans rounded-lg" >
                             Shop Now
-                        </ShadcnButton> */}
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -157,6 +157,48 @@ export default function HomePage() {
                         transition cursor-pointer">
                             <FaArrowRight className="text-[#07484A]" />
                         </button>
+                    </div>
+                    <div className="mt-8 flex items-center justify-center">
+                        <Button type="button" className="h-10 text-[#FDFBF8] bg-linear-to-r from-[#088347]
+                            to-[#C6E824] cursor-pointer font-openSans rounded-md flex gap-2" >
+                            Explore all items
+                            <FaArrowRight />
+                        </Button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="bg-[#C6E8244D] mt-16 pb-16">
+                <h1 className="text-center text-[#07484A] text-4xl font-playFairDisplay font-bold pt-16">
+                    Benefits for your expediency</h1>
+
+                <div className="flex flex-col lg:flex-row gap-y-10 justify-around items-center pt-16">
+                    <div className="flex flex-col gap-5 items-center justify-center">
+                        <Image src="/benefits-for-your-expediency/hand.svg" alt="hand" width={80} height={80} />
+                        <h1 className="text-[#07484A] text-xl font-playFairDisplay font-semibold">Payment Method</h1>
+                        <div className="flex flex-col items-center justify-center">
+                            <p className="text-[#07484A] font-openSans">We offer flexible payment</p>
+                            <p className="text-[#07484A] font-openSans">options, to make easier.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-5 items-center justify-center">
+                        <Image src="/benefits-for-your-expediency/box.svg" alt="hand" width={80} height={80} />
+                        <h1 className="text-[#07484A] text-xl font-playFairDisplay font-semibold">Return policy</h1>
+                        <div className="flex flex-col items-center justify-center">
+                            <p className="text-[#07484A] font-openSans">You can return a product</p>
+                            <p className="text-[#07484A] font-openSans">within 30 days.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-5 items-center justify-center">
+                        <Image src="/benefits-for-your-expediency/earphone.svg" alt="hand" width={80} height={80} />
+                        <h1 className="text-[#07484A] text-xl font-playFairDisplay font-semibold">Customer Support</h1>
+                        <div className="flex flex-col items-center justify-center">
+                            <p className="text-[#07484A] font-openSans">Our customer support</p>
+                            <p className="text-[#07484A] font-openSans">is 24/7.</p>
+                        </div>
                     </div>
                 </div>
             </div>
