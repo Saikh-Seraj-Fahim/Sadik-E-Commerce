@@ -30,6 +30,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Image from "next/image";
+import TestimonialsCard from "@/components/TestimonialsCard";
 
 const bestSellers = [
     { id: 1, imageName: "socket-image", title: "Armchair", description: "Light single chair", price: "$145" },
@@ -42,6 +43,29 @@ const bestSellers = [
     { id: 8, imageName: "ameter", title: "Minimal Sofa", description: "Modern design", price: "$345" },
     { id: 9, imageName: "wire", title: "Dining Chair", description: "Elegant chair", price: "$125" },
     { id: 10, imageName: "socket-image", title: "Office Chair", description: "Ergonomic design", price: "$199" },
+];
+
+const reviews = [
+    {
+        id: 1, imageName: "person", name: "Leona Paul",
+        review: "My experience with Mark is a complete sucess, from customer service, wide range of products, clean store, purchasing experience, the newsletter.Thank you.",
+    },
+    {
+        id: 2, imageName: "person", name: "Fahim",
+        review: "All products are good",
+    },
+    {
+        id: 3, imageName: "person", name: "Faisal",
+        review: "Excellent",
+    },
+    {
+        id: 4, imageName: "person", name: "Faria",
+        review: "long lasting products",
+    },
+    {
+        id: 5, imageName: "person", name: "Digonto",
+        review: "products are cheap",
+    },
 ];
 
 export default function HomePage() {
@@ -200,6 +224,35 @@ export default function HomePage() {
                             <p className="text-[#07484A] font-openSans">is 24/7.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+
+            <div>
+                <h1 className="text-[#07484A] text-4xl text-center font-playFairDisplay font-bold pt-14">Testimonials</h1>
+                <p className="text-[#07484A] text-xl text-center font-roboto mt-4">Over 15,000 happy customers.</p>
+                <div className="w-full mt-12 px-8 md:px-16 lg:px-24 2xl:px-32">
+                    <Swiper
+                        modules={[Navigation, Scrollbar]}
+                        spaceBetween={1}
+                        slidesPerView={1}
+                        navigation={{
+                            prevEl: '.custom-prev',
+                            nextEl: '.custom-next',
+                        }}
+                        //pagination={{ clickable: true }}
+                        scrollbar={{ draggable: true }}
+                        className="mt-8">
+                        {reviews.map((item) => (
+                            <SwiperSlide key={item.id} className="pb-9 !flex !items-center !justify-center">
+                                <TestimonialsCard
+                                    imageName={item.imageName}
+                                    review={item.review}
+                                    name={item.name}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </div>
         </div>
