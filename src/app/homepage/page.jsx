@@ -260,7 +260,7 @@ export default function HomePage() {
                         ))}
                     </Swiper>
                     {/* Arrow button for navigation */}
-                    <div className="w-1/4 h-[300px] sm:h-[400px] flex flex-col justify-end sm:justify-center items-center gap-6">
+                    <div className="w-1/4 flex flex-col justify-end sm:justify-center items-center gap-6">
                         <button className="custom-prev-testi w-10 h-10 rounded-full flex items-center justify-center bg-[#C6E824] 
                         transition cursor-pointer">
                             <FaArrowLeft className="text-[#07484A]" />
