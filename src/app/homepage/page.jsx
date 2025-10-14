@@ -259,7 +259,11 @@ export default function HomePage() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+
                     {/* Arrow button for navigation */}
+                    {/* The card totally takes 3/4 width of screen. Means the Swiper also takes 3/4 width, as the card is within the 
+                    Swiper. So, the remaining 1/4 width is for arrow buttons. */}
+
                     <div className="w-1/4 flex flex-col justify-end sm:justify-center items-center gap-6">
                         <button className="custom-prev-testi w-10 h-10 rounded-full flex items-center justify-center bg-[#C6E824] 
                         transition cursor-pointer">
